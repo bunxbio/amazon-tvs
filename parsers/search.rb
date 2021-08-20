@@ -8,7 +8,7 @@ products.each do |product|
 	pages << {
 		url: url,
 		page_type: 'products',
-		fetch_type: 'browser',
+#		fetch_type: 'browser',
 		force_fetch: true,
 		vars: {
 			category: page['vars']['category'],
@@ -24,13 +24,9 @@ if pagination_links
 		pages << {
 			url: next_page,
 			page_type: 'search',
-			fetch_type: 'browser',
-			force_fetch: true,
-			method: "GET",
-			headers: {"User-Agent" => "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"},
-			driver: {
-				code: "await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000); await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);"
-			},
+#			force_fetch: true,
+#			method: "GET",
+#			headers: {"User-Agent" => "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"},
 			vars: {
 				category: page['vars']['category']
 			}
