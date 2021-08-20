@@ -1,8 +1,8 @@
 nokogiri = Nokogiri.HTML(content)
 
-products = nokogiri.css('h2.a-size-mini')
+products = nokogiri.at_css('h2.a-size-mini')
 products.each do |product|
-	a_element = product.attr('href')
+	a_element = product['href']
 	url = URI.join('https://www.amazon.com', a_element).to_s
 
 	pages << {

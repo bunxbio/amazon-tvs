@@ -5,12 +5,9 @@ pages << {
   force_fetch: true,
   method: "GET",
   headers: {"User-Agent" => "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"},
-#  driver: {
-#    pre_code: "intercept((request, overrides) => {
-#    overrides['url'] = 'https://www.amazon.com/s?rh=n%3A6459737011&fs=true&ref=lp_6459737011_sar';
-#    return true;
-#  });"
-#  },
+  driver: {
+    code: "await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000); await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);"
+  },
   vars: {
     category: "LED & LCD TVs"
   }
@@ -23,12 +20,9 @@ pages << {
   force_fetch: true,
   method: "GET",
   headers: {"User-Agent" => "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"},
-#  driver: {
-#    pre_code: "intercept((request, overrides) => {
-#    overrides['url'] = 'https://www.amazon.com/s?rh=n%3A6463520011&fs=true&ref=lp_6463520011_sar';
-#    return true;
-#  });"
-#  },
+  driver: {
+    code: "await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000); await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);await page.evaluate('window.scrollBy(0,1200)'); await sleep(1000);"
+  },
   vars: {
     category: "OLED TVs"
   }
