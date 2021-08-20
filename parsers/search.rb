@@ -17,13 +17,12 @@ products.each do |product|
 	}
 end
 
-pagination_links = nokogiri.css('ul.a-pagination li')
-pagination_links.each do |link|
-	page_num = link.text.strip
-	if page_num =~ /[0-9]/
-		url = "https://www.amazon.com/s?k=LED+%26+LCD+TVs&i=electronics&rh=n%3A6459737011&page=#{page_num}&qid=1629491149&ref=sr_pg_#{page_num}",
+pagination_links = nokogiri.at_css('.a-last > a')
+if pagination_links
+	next_page = "https://www.amazon.com#{pagination_links['href']}"
+	if next_page =~ /\Ahttps?:\/\//i
 		pages << {
-			url: url,
+			url: next_page,
 			page_type: 'search',
 			fetch_type: 'browser',
 			force_fetch: true,
