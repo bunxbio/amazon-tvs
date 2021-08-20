@@ -1,30 +1,34 @@
 pages << {
-  url: 'https://www.amazon.com/s?i=electronics&rh=n%3A6459737011&fs=true&qid=1629481136&ref=sr_pg_1',
+  url: 'https://www.amazon.com/s/ref=lp_172659_nr_n_0?fst=as%3Aoff&rh=n%3A172282%2Cn%3A%21493964%2Cn%3A1266092011%2Cn%3A172659%2Cn%3A6459737011&bbn=172659&ie=UTF8&qid=1547749731&rnid=172659',
   page_type: "listings",
   fetch_type: 'browser',
   force_fetch: true,
   method: "GET",
   headers: {"User-Agent" => "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"},
-#  driver: {
-#    name: "click see all results",
-#    pre_code: "await page.click('#a-page > div.a-container > div.a-row.apb-browse-two-col-center-pad > div.a-column.a-span12.aok-float-right.apb-browse-col-pad-left.apb-browse-two-col-center-margin-right > div:nth-child(12) > div.a-section.a-spacing-none > div > div > a'); await sleep(3000);"
-#  },
+  driver: {
+    pre_code: "intercept((request, overrides) => {
+    overrides['url'] = 'https://www.amazon.com/s?rh=n%3A6459737011&fs=true&ref=lp_6459737011_sar';
+    return true;
+  });"
+  },
   vars: {
     category: "LED & LCD TVs"
   }
 }
 
 pages << {
-  url: 'https://www.amazon.com/s?i=electronics&rh=n%3A6463520011&fs=true&qid=1629480984&ref=sr_pg_1',
+  url: 'https://www.amazon.com/s/ref=lp_172659_nr_n_1?fst=as%3Aoff&rh=n%3A172282%2Cn%3A%21493964%2Cn%3A1266092011%2Cn%3A172659%2Cn%3A6463520011&bbn=172659&ie=UTF8&qid=1547749731&rnid=172659',
   page_type: "listings",
   fetch_type: 'browser',
   force_fetch: true,
   method: "GET",
   headers: {"User-Agent" => "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"},
-#  driver: {
-#    name: "click see all results",
-#    pre_code: "await page.click('#a-page > div.a-container > div.a-row.apb-browse-two-col-center-pad > div.a-column.a-span12.aok-float-right.apb-browse-col-pad-left.apb-browse-two-col-center-margin-right > div:nth-child(12) > div.a-section.a-spacing-none > div > div > a'); await sleep(3000);"
-#  },
+  driver: {
+    pre_code: "intercept((request, overrides) => {
+    overrides['url'] = 'https://www.amazon.com/s?rh=n%3A6463520011&fs=true&ref=lp_6463520011_sar';
+    return true;
+  });"
+  },
   vars: {
     category: "OLED TVs"
   }
